@@ -41,3 +41,48 @@ Due to AO3 not having an offical API, we scraped the data. There are three main 
   - Most opened fic
   - Favourite author
   - and more...
+
+## Graph Representation 
+
+### Nodes
+There are a lof of interesting nodes on AO3, these are the ones we will be looking into:
+- Stories
+- Tags
+- Users
+- Collections
+
+#### Node Attributes
+Some of the nodes have attributes associated with them.
+Tags can be of the following types:
+- Rating
+- Warnings
+- Category
+- Relationship
+- Character
+- Fandom
+- Freeform Tag
+
+Stories have the following attributes:
+- Crossover (boolean)
+- Completion (boolean)
+- Word count (integer)
+- Date updated (date)
+- Date Posted (date)
+- Kudos (integer)
+- Bookmarks (integer)
+- Hits (integer)
+- Title (string)
+- Chapters (integer/integer:string)
+- Chapter Titles (string)
+- Comment Count (integer)
+- Comments (strings)
+
+
+### Edges
+- Stories -> Fandom
+- Stories -> Tag
+- Users -> Stories
+- Stories -> Collections
+- Comments -> Users
+- Comments -> Chapters -> Stories
+- Chapters -> Stories
