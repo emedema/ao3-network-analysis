@@ -6,7 +6,7 @@ One of the main hubs of fanfiction is [Archive of our Own (AO3)](https://archive
 
 ## Team
 - [Emily Medema](https://github.com/emedema)
-- Tatiana Urazova(https://github.com/taturazova)
+- [Tatiana Urazova](https://github.com/taturazova)
 
 ## Research Questions
 
