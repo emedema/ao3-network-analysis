@@ -84,5 +84,5 @@ Stories have the following attributes:
 - Users -> Stories
 - Stories -> Collections
 - Comments -> Users
-- Comments -> Chapters -> Stories
+- Comments -> Chapters
 - Chapters -> Stories
