@@ -69,7 +69,8 @@ Stories have the following attributes:
 - Date updated (date)
 - Date Posted (date)
 - Kudos (integer)
-- Bookmarks (integer)
+- Bookmark count (integer)
+- List of users who bookmarked. 
 - Hits (integer)
 - Title (string)
 - Chapters (integer/integer:string)
