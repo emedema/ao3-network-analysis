@@ -25,7 +25,7 @@ class FandomsCategoriesSpiderSpider(scrapy.Spider):
         options = webdriver.ChromeOptions()
         options.add_argument("headless")
         desired_capabilities = options.to_capabilities()
-        driver = webdriver.Chrome(ChromeDriverManager().install(), desired_capabilities=desired_capabilities)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options = options,desired_capabilities=desired_capabilities)
 
         # Getting list of Fandoms
         driver.get("https://archiveofourown.org/media")
@@ -37,7 +37,7 @@ class FandomsCategoriesSpiderSpider(scrapy.Spider):
         wait = WebDriverWait(driver, 5)
         wait.until(EC.presence_of_element_located((By.CLASS_NAME, "heading")))
 
-        # Extracting country names
+        # Extracting fandom category names
         fandom_categories = driver.find_elements_by_xpath("//h3/a")
         fandom_categories_count = 0
         # Using Scrapy's yield to store output instead of explicitly writing to a JSON file
