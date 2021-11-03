@@ -5,10 +5,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
+from selenium.webdriver.common.action_chains import ActionChains
 from webdriver_manager.chrome import ChromeDriverManager
 from logzero import logger, logfile
 import json
 import time
+import re
 
 class FandomStatsSpiderSpider(scrapy.Spider):
     logfile("ao3bot_spider.log", maxBytes=1e6, backupCount=3)
@@ -23,22 +25,37 @@ class FandomStatsSpiderSpider(scrapy.Spider):
 
     def get_total(self, text):
         #from text extract number
-        logger.info("header: " + str(text))
         totals = [int(s) for s in str(text).split() if s.isdigit()]
         return max(totals)
 
     def get_totals_dict(self, l):
         #from text extract number
         dict = {}
-        logger.info(l)
-        for i, s in l:
-            count = max([int(x) for x in str(s).split() if x.isdigit()])
-            mod_string = ''.join((item for item in s if not item.isalpha()))
-            
+        for s in l:
+            temp_list = [int(x) for x in list(s) if x.isdigit()]
+            count = ''
+            for i in temp_list:
+                count = count + str(i)
+            temp = re.sub(r'[0-9]+', '', s)
+            mod_string = temp[:-3]
             dict.update({mod_string:count})
-        logger.info(f"ratings: {dict}")
         return dict
 
+    def check_consent(self, driver):
+        # Open provided link in a browser window using the driver
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, 'tos_agree'))
+            )
+            element.click()
+            btn = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, 'accept_tos'))
+            )
+            btn.click()
+            return
+        finally:
+            print("TOS Form accepted.")
+    
     def parse_fandom_stats(self, response):
         base_url = "https://archiveofourown.org"
         logger.info(f"Scraping started at {time.strftime('%H:%M:%S')}")
@@ -47,70 +64,93 @@ class FandomStatsSpiderSpider(scrapy.Spider):
         options = webdriver.ChromeOptions()
         options.add_argument("headless")
         desired_capabilities = options.to_capabilities()
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options = options, desired_capabilities=desired_capabilities)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), desired_capabilities=desired_capabilities)
 
         #open fandoms_list written by fandoms spider
         with open("fandoms_list.json", "r") as f:
             temp_list = json.load(f)
         
         urls = list(map(lambda x: x.get("fandom_link"), temp_list))
+        #urls = ['/tags/%E6%96%87%E8%B1%AA%E3%82%B9%E3%83%88%E3%83%AC%E3%82%A4%E3%83%89%E3%83%83%E3%82%B0%E3%82%B9%20%7C%20Bungou%20Stray%20Dogs/works']
         fandoms = list(map(lambda x: x.get("fandom"), temp_list))
 
         count = 0
         exception_count = 0
-
+        restarted = False
         for i, url in enumerate(urls):
 
             try:
                 #Open fandom page
                 driver.get(base_url + url)
-                # Explicit wait
-                wait = WebDriverWait(driver, 5)
-                wait.until(EC.presence_of_element_located((By.CLASS_NAME, "tag")))
-                time.sleep(2)
-                #temp = driver.find_elements_by_xpath("//dd[@class = 'expandable rating tags']/ul/li")
+                time.sleep(5)
+                page_html = driver.page_source
+                #check TOS
+                if count == 0 or restarted == True:
+                    self.check_consent(driver)
+                    logger.info("TOS Accepted")
+                    restarted = False
                 
+                if 'retry' in page_html or 'Retry' in page_html:
+                    logger.info(f"Got to fandom: {count}")
+                    time.sleep(200)
+                    driver.get(base_url + url)
+
+                #wait
+                wait = WebDriverWait(driver, 5)
+                wait.until(EC.presence_of_element_located((By.ID, "toggle_include_rating_tags")))
+                time.sleep(2)
+
+                driver.execute_script("document.querySelector('#toggle_include_rating_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_archive_warning_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_category_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_fandom_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_character_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_relationship_tags').click()")
+                driver.execute_script("document.querySelector('#toggle_include_freeform_tags').click()")
+                
+                wait.until(EC.presence_of_element_located((By.ID, "include_rating_tags")))
+                time.sleep(2)
+
                 # Hand-off between Selenium and Scrapy happens here
                 sel = Selector(text=driver.page_source)
 
                 total_works = self.get_total(sel.xpath("//h2[@class = 'heading']/text()").getall())
-                temp = sel.xpath("//dd[@class = 'expandable rating tags']").getall()
-                logger.info(f"getting ratings: {temp}")
-                #rating_dict = self.get_totals_dict()
-                # warnings_na
-                # warnings_notchosen
-                # warnings_mcd
-                # warnings_violence
-                # warnings_underage
-                # warnings_noncon
-                # cat_mm
-                # cat_fm
-                # cat_ff
-                # cat_gen
-                # cat_multi
-                # cat_other
-                # fandoms
-                # characters
-                # relationships
-                # freeform
+                ratings = sel.xpath("//dd[@id = 'include_rating_tags']/ul/li/label/span/text()").getall()
+                rating_dict = self.get_totals_dict(ratings)
+                warnings_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_archive_warning_tags']/ul/li/label/span/text()").getall())
+                categories_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_category_tags']/ul/li/label/span/text()").getall())
+                fandoms_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_fandom_tags']/ul/li/label/span/text()").getall())
+                characters_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_character_tags']/ul/li/label/span/text()").getall())
+                ships_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_relationship_tags']/ul/li/label/span/text()").getall())
+                freeform_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_freeform_tags']/ul/li/label/span/text()").getall())
+                
                 yield {
                     "fandom": fandoms[i],
                     "total_works": total_works,
-                    "ratings": rating_dict
+                    "ratings": rating_dict,
+                    "warnings": warnings_dict,
+                    "categories": categories_dict,
+                    "fandoms": fandoms_dict,
+                    "characters": characters_dict,
+                    "relationships": ships_dict,
+                    "freeforms": freeform_dict
                 }
                 count += 1
+                urls.pop(i)
             except Exception as e:
                 logger.error(f"Exception {e} has occurred with URL: {url}")
                 exception_count += 1
             except exceptions as f:
                 logger.error(f"Selenium Exception {f} has occured with URL: {url}")
                 exception_count += 1
-            # Terminating and reinstantiating webdriver every 200 URL to reduce the load on RAM
+            # Terminating and reinstantiating webdriver every 70 URL to reduce the load on RAM
             if (i != 0) and (i % 200 == 0):
+                time.sleep(100)
                 driver.quit()
-                driver = webdriver.Chrome(desired_capabilities=desired_capabilities)
+                driver = webdriver.Chrome(ChromeDriverManager().install(), desired_capabilities=desired_capabilities)
                 logger.info("Chromedriver restarted")
-            break
+                restarted = True
+            
 
         logger.info(f"Scraping ended at {time.strftime('%H:%M:%S')}")
         logger.info(f"Scraped {count} fandoms_stats.")
