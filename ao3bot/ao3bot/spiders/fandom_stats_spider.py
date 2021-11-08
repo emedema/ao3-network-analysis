@@ -11,6 +11,7 @@ from logzero import logger, logfile
 import json
 import time
 import re
+import os
 
 class FandomStatsSpiderSpider(scrapy.Spider):
     logfile("ao3bot_spider.log", maxBytes=1e6, backupCount=3)
@@ -63,8 +64,10 @@ class FandomStatsSpiderSpider(scrapy.Spider):
         # Use headless option to not open a new browser window
         options = webdriver.ChromeOptions()
         options.add_argument("headless")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--no-sandbox")
         desired_capabilities = options.to_capabilities()
-        driver = webdriver.Chrome(ChromeDriverManager().install(), desired_capabilities=desired_capabilities)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options = options, desired_capabilities=desired_capabilities)
 
         #open fandoms_list written by fandoms spider
         with open("fandoms_list.json", "r") as f:
@@ -147,7 +150,7 @@ class FandomStatsSpiderSpider(scrapy.Spider):
             if (i != 0) and (i % 200 == 0):
                 time.sleep(100)
                 driver.quit()
-                driver = webdriver.Chrome(ChromeDriverManager().install(), desired_capabilities=desired_capabilities)
+                driver = webdriver.Chrome(ChromeDriverManager().install(), options = options, desired_capabilities=desired_capabilities)
                 logger.info("Chromedriver restarted")
                 restarted = True
             
