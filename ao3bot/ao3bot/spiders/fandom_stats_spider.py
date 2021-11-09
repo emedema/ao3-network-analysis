@@ -70,7 +70,7 @@ class FandomStatsSpiderSpider(scrapy.Spider):
         driver = webdriver.Chrome(ChromeDriverManager().install(), options = options, desired_capabilities=desired_capabilities)
 
         #open fandoms_list written by fandoms spider
-        with open("fandoms_list.json", "r") as f:
+        with open("fandoms_left.json", "r") as f:
             temp_list = json.load(f)
         
         urls = list(map(lambda x: x.get("fandom_link"), temp_list))
