@@ -33,13 +33,16 @@ class FandomStatsSpiderSpider(scrapy.Spider):
         #from text extract number
         dict = {}
         for s in l:
-            temp_list = [int(x) for x in list(s) if x.isdigit()]
+            starting_bracket = [x for x, z in enumerate(s) if z == '(']
+            closing_bracket = [x for x, z in enumerate(s) if z == ')']
+            subset = s[starting_bracket[-1]:]
+            temp_list = [int(x) for x in list(subset) if x.isdigit()]
             count = ''
             for i in temp_list:
                 count = count + str(i)
             temp = re.sub(r'[0-9]+', '', s)
             mod_string = temp[:-3]
-            dict.update({mod_string:count})
+            dict.update({s[:starting_bracket[-1]]:count})
         return dict
 
     def check_consent(self, driver):
@@ -74,7 +77,7 @@ class FandomStatsSpiderSpider(scrapy.Spider):
             temp_list = json.load(f)
         
         urls = list(map(lambda x: x.get("fandom_link"), temp_list))
-        #urls = ['/tags/%E6%96%87%E8%B1%AA%E3%82%B9%E3%83%88%E3%83%AC%E3%82%A4%E3%83%89%E3%83%83%E3%82%B0%E3%82%B9%20%7C%20Bungou%20Stray%20Dogs/works']
+        #urls = ['/tags/Eagles%20(TV%202019)/works']
         fandoms = list(map(lambda x: x.get("fandom"), temp_list))
 
         count = 0
