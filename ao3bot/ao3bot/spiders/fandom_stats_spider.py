@@ -66,14 +66,14 @@ class FandomStatsSpiderSpider(scrapy.Spider):
 
         # Use headless option to not open a new browser window
         options = webdriver.ChromeOptions()
-        options.add_argument("headless")
+        #options.add_argument("headless")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
         desired_capabilities = options.to_capabilities()
         driver = webdriver.Chrome(ChromeDriverManager().install(), options = options, desired_capabilities=desired_capabilities)
 
         #open fandoms_list written by fandoms spider
-        with open("fandoms_left.json", "r") as f:
+        with open("pop_fandoms_clean.json", "r") as f:
             temp_list = json.load(f)
         
         urls = list(map(lambda x: x.get("fandom_link"), temp_list))
@@ -87,19 +87,14 @@ class FandomStatsSpiderSpider(scrapy.Spider):
 
             try:
                 #Open fandom page
-                driver.get(base_url + url)
+                driver.get(url)
                 time.sleep(5)
-                page_html = driver.page_source
+                #page_html = driver.page_source
                 #check TOS
                 if count == 0 or restarted == True:
                     self.check_consent(driver)
                     logger.info("TOS Accepted")
                     restarted = False
-                
-                if 'retry' in page_html or 'Retry' in page_html:
-                    logger.info(f"Got to fandom: {count}")
-                    time.sleep(200)
-                    driver.get(base_url + url)
 
                 #wait
                 wait = WebDriverWait(driver, 5)
@@ -142,7 +137,6 @@ class FandomStatsSpiderSpider(scrapy.Spider):
                     "freeforms": freeform_dict
                 }
                 count += 1
-                urls.pop(i)
             except Exception as e:
                 logger.error(f"Exception {e} has occurred with URL: {url}")
                 exception_count += 1
