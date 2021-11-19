@@ -78,7 +78,7 @@ class TopFicBookmarksSpiderSpider(scrapy.Spider):
 
         # Use headless option to not open a new browser window
         options = webdriver.ChromeOptions()
-        #options.add_argument("headless")
+        options.add_argument("headless")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
         desired_capabilities = options.to_capabilities()
