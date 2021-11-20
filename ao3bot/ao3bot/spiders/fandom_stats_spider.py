@@ -42,7 +42,7 @@ class FandomStatsSpiderSpider(scrapy.Spider):
                 count = count + str(i)
             temp = re.sub(r'[0-9]+', '', s)
             mod_string = temp[:-3]
-            dict.update({s[:starting_bracket[-1]]:count})
+            dict.update({s[:starting_bracket[-1]].rstrip():count})
         return dict
 
     def check_consent(self, driver):
