@@ -1,3 +1,4 @@
 scrapy
 selenium
 webdriver-manager
+networkx
