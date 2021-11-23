@@ -87,3 +87,13 @@ Stories have the following attributes:
 - Comments -> Users
 - Comments -> Chapters
 - Chapters -> Stories
+
+## Installation
+
+In order to run the scripts in the repo you must:
+
+```pip intall -r requirements.txt```
+
+For the node analysis you need:
+
+```conda install -c anaconda networkx```
