@@ -2,4 +2,4 @@ scrapy
 selenium
 webdriver-manager
 networkx
-wordcloud
+wordcloudgit 
