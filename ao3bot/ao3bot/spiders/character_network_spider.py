@@ -104,14 +104,27 @@ class CharacterNetworkSpiderSpider(scrapy.Spider):
 
                     #wait
                     wait = WebDriverWait(driver, 5)
-                    wait.until(EC.presence_of_element_located((By.ID, "work_search_sort_column")))
+                    wait.until(EC.presence_of_element_located((By.ID, "toggle_include_rating_tags")))
                     time.sleep(2)
 
                     
-                    wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/ol[2]/li[1]/dl/dd[@class='bookmarks']/a")))
+                    driver.execute_script("document.querySelector('#toggle_include_rating_tags').click()")
+                    time.sleep(1)
+                    driver.execute_script("document.querySelector('#toggle_include_archive_warning_tags').click()")
                     time.sleep(2)
+                    driver.execute_script("document.querySelector('#toggle_include_category_tags').click()")
+                    time.sleep(1)
+                    driver.execute_script("document.querySelector('#toggle_include_fandom_tags').click()")
+                    time.sleep(1)
+                    driver.execute_script("document.querySelector('#toggle_include_character_tags').click()")
+                    time.sleep(2)
+                    driver.execute_script("document.querySelector('#toggle_include_relationship_tags').click()")
+                    time.sleep(1)
+                    driver.execute_script("document.querySelector('#toggle_include_freeform_tags').click()")
                     
-                    
+                    wait.until(EC.presence_of_element_located((By.ID, "include_rating_tags")))
+                    time.sleep(5)
+
 
                     # Hand-off between Selenium and Scrapy happens here
                     sel = Selector(text=driver.page_source)
@@ -119,13 +132,24 @@ class CharacterNetworkSpiderSpider(scrapy.Spider):
                     total_works = self.get_total(sel.xpath("//h2[@class = 'heading']/text()").getall())
                     characters_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_character_tags']/ul/li/label/span/text()").getall())
                     ships_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_relationship_tags']/ul/li/label/span/text()").getall())
+                    ratings = sel.xpath("//dd[@id = 'include_rating_tags']/ul/li/label/span/text()").getall()
+                    rating_dict = self.get_totals_dict(ratings)
+                    warnings_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_archive_warning_tags']/ul/li/label/span/text()").getall())
+                    categories_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_category_tags']/ul/li/label/span/text()").getall())
+                    fandoms_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_fandom_tags']/ul/li/label/span/text()").getall())
+                    freeform_dict = self.get_totals_dict(sel.xpath("//dd[@id = 'include_freeform_tags']/ul/li/label/span/text()").getall())
                     
                     yield {
                         "fandom": fandoms[i],
                         "character": character,
                         "total_works": total_works,
                         "characters": characters_dict,
-                        "relationships": ships_dict
+                        "relationships": ships_dict,
+                        "ratings": rating_dict,
+                        "warnings": warnings_dict,
+                        "categories": categories_dict,
+                        "fandoms": fandoms_dict,
+                        "freeforms": freeform_dict
                     }
                     count += 1
                 except Exception as e:
