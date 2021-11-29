@@ -1,0 +1,623 @@
+Id,Label
+1,Bakugou Katsuki
+2,Midoriya Izuku
+3,Todoroki Shouto
+4,Kirishima Eijirou
+5,Aizawa Shouta | Eraserhead
+6,Yamada Hizashi | Present Mic
+7,Uraraka Ochako
+8,Reader
+9,Yaoyorozu Momo
+10,Jirou Kyouka
+11,Kaminari Denki
+12,Shinsou Hitoshi
+13,Yagi Toshinori | All Might
+14,Asui Tsuyu
+15,Minor or Background Relationship(s)
+16,Ashido Mina
+17,Hinata Shouyou
+18,Kageyama Tobio
+19,Sawamura Daichi
+20,Sugawara Koushi
+21,Tsukishima Kei
+22,Yamaguchi Tadashi
+23,Akaashi Keiji
+24,Bokuto Koutarou
+25,Iwaizumi Hajime
+26,Oikawa Tooru
+27,Kozume Kenma
+28,Kuroo Tetsurou
+29,Azumane Asahi
+30,Nishinoya Yuu
+31,Miya Atsumu
+32,Sakusa Kiyoomi
+33,Hanamaki Takahiro
+34,Matsukawa Issei
+35,Kyoutani Kentarou
+36,Yahaba Shigeru
+37,Shimizu Kiyoko
+38,Yachi Hitoka
+39,Uchiha Sasuke
+40,Uzumaki Naruto
+41,Hyuuga Hinata
+42,Haruno Sakura
+43,Hatake Kakashi
+44,Umino Iruka
+45,Nara Shikamaru
+46,Temari
+47,Gaara
+48,Uchiha Obito
+49,Maito Gai | Might Guy
+50,Yamato | Tenzou
+51,Namikaze Minato
+52,Uzumaki Kushina
+53,Uchiha Itachi
+54,Yamanaka Ino
+55,Uchiha Shisui
+56,Hoshigaki Kisame
+57,Hyuuga Neji
+58,Tenten
+59,Sai
+60,Inuzuka Kiba
+61,Deidara
+62,Nohara Rin
+63,Tobi (Naruto)
+64,Uchiha Madara
+65,Levi Ackerman
+66,Eren Yeager
+67,Erwin Smith
+68,Hange Zoë
+69,Marco Bott
+70,Jean Kirstein
+71,Krista Lenz | Historia Reiss
+72,Ymir
+73,Mikasa Ackerman
+74,Sasha Blouse
+75,Connie Springer
+76,Armin Arlert
+77,Annie Leonhart
+78,Reiner Braun
+79,Bertolt Hoover
+80,Adrien Agreste | Chat Noir
+81,Marinette Dupain-Cheng | Ladybug
+82,Alya Césaire
+83,Nino Lahiffe
+84,Luka Couffaine
+85,Damian Wayne
+86,Juleka Couffaine
+87,Rose Lavillant
+88,Marc Anciel
+89,Nathaniel Kurtzberg
+90,Kagami Tsurugi
+91,Gabriel Agreste | Papillon | Hawk Moth
+92,Nathalie Sancoeur
+93,Ivan Bruel
+94,Mylène Haprèle
+95,Sabine Cheng
+96,Tom Dupain
+97,Emilie Agreste
+98,Plagg
+99,Tikki (Miraculous Ladybug)
+100,Chloé Bourgeois
+101,Draco Malfoy
+102,Harry Potter
+103,Hermione Granger
+104,Ron Weasley
+105,Ginny Weasley
+106,Severus Snape
+107,Sirius Black
+108,Remus Lupin
+109,Tom Riddle
+110,James Potter
+111,Lily Evans Potter
+112,Tom Riddle | Voldemort
+113,Lucius Malfoy
+114,Narcissa Black Malfoy
+115,Astoria Greengrass
+116,Original Female Character(s)
+117,Marlene McKinnon
+118,Dorcas Meadowes
+119,Nymphadora Tonks
+120,Luna Lovegood
+121,Arthur Weasley
+122,Molly Weasley
+123,Scorpius Malfoy
+124,Albus Severus Potter
+125,Regulus Black
+126,Albus Dumbledore
+127,Gellert Grindelwald
+128,Rey
+129,Ben Solo | Kylo Ren
+130,Kylo Ren
+131,Ben Solo
+132,Poe Dameron
+133,Finn
+134,Rey (Star Wars)
+135,Leia Organa
+136,Han Solo
+137,Armitage Hux
+138,You
+139,Obi-Wan Kenobi
+140,Anakin Skywalker
+141,Padmé Amidala
+142,Qui-Gon Jinn
+143,CC-2224 | Cody
+144,Satine Kryze
+145,Rose Tico
+146,Din Djarin
+147,Luke Skywalker
+148,Sherlock Holmes
+149,John Watson
+150,Molly Hooper
+151,Mycroft Holmes
+152,Greg Lestrade
+153,Mary Morstan
+154,Jim Moriarty
+155,Irene Adler
+156,Sebastian Moran
+157,Lestrade
+158,James Moriarty
+159,Philip Anderson
+160,Sally Donovan
+161,Bilbo Baggins
+162,Thorin Oakenshield
+163,Kíli (Tolkien)
+164,Tauriel (Hobbit Movies)
+165,Fíli
+166,Dwalin
+167,Ori (Tolkien)
+168,Thranduil
+169,Bofur
+170,Nori (Tolkien)
+171,Fíli (Tolkien)
+172,Sigrid (Hobbit Movies)
+173,Gimli (Son of Glóin)
+174,Legolas Greenleaf
+175,Aragorn | Estel
+176,Arwen Undómiel
+177,Bard the Bowman
+178,Thranduil (Tolkien)
+179,Thranduil's Wife
+180,Frodo Baggins
+181,Sam Gamgee
+182,Boromir (Son of Denethor II)
+183,Éowyn
+184,Faramir (Son of Denethor II)
+185,Celebrían
+186,Elrond Peredhel
+187,Erestor
+188,Glorfindel (Tolkien)
+189,Lindir
+190,Female Inquisitor
+191,Cullen Rutherford
+192,Female Trevelyan
+193,Female Lavellan
+194,Dorian Pavus
+195,Inquisitor
+196,Solas (Dragon Age)
+197,Trevelyan
+198,Lavellan
+199,The Iron Bull
+200,Fenris
+201,Female Hawke (Dragon Age)
+202,Male Hawke (Dragon Age)
+203,Female Hawke
+204,Varric Tethras
+205,Anders
+206,Cassandra Pentaghast
+207,Male Inquisitor
+208,Male Lavellan
+209,Male Trevelyan
+210,The Iron Bull (Dragon Age)
+211,Leliana
+212,Female Warden (Dragon Age)
+213,Alistair
+214,Female Cousland (Dragon Age)
+215,Fen'Harel
+216,Female Lavellan (Dragon Age)
+217,Fenris (Dragon Age)
+218,Hawke (Dragon Age)
+219,Karl Thekla
+220,Nathaniel Howe
+221,Isabela (Dragon Age)
+222,Sebastian Vael
+223,Merrill (Dragon Age)
+224,"James ""Bucky"" Barnes"
+225,Steve Rogers
+226,Tony Stark
+227,Pepper Potts
+228,Clint Barton
+229,Natasha Romanov
+230,Peggy Carter
+231,Loki
+232,Peter Parker
+233,Stephen Strange
+234,Sam Wilson
+235,Phil Coulson
+236,Jane Foster
+237,Thor
+238,Wade Wilson
+239,Michelle Jones
+240,Thor (Marvel)
+241,Loki (Marvel)
+242,Mobius M. Mobius
+243,Bruce Banner
+244,Clark Kent
+245,Bruce Wayne
+246,Selina Kyle
+247,Joker (DCU)
+248,Dick Grayson
+249,Jason Todd
+250,Wally West
+251,Tim Drake
+252,Roy Harper
+253,Kon-El | Conner Kent
+254,Kara Danvers
+255,Lena Luthor
+256,Alex Danvers
+257,Maggie Sawyer
+258,Cat Grant
+259,Mon-El
+260,Kelly Olsen
+261,"Samantha ""Sam"" Arias"
+262,Jonathan Kent
+263,Lex Luthor
+264,Lois Lane
+265,Diana (Wonder Woman)
+266,Barry Allen
+267,Iris West
+268,Leonard Snart
+269,Oliver Queen
+270,Felicity Smoak
+271,Hal Jordan (Green Lantern)
+272,Caitlin Snow
+273,Cisco Ramon
+274,Eddie Thawne
+275,Lisa Snart
+276,Astra
+277,Laurel Lance
+278,Thea Queen
+279,John Diggle
+280,Lyla Michaels
+281,Tommy Merlyn
+282,Sara Lance
+283,Nyssa al Ghul
+284,Angie Martinelli
+285,Daniel Sousa
+286,Clay | Dream
+287,GeorgeNotFound (Video Blogging RPF)
+288,No Romantic Relationship(s)
+289,Karl Jacobs
+290,Sapnap
+291,GeorgeNotFound
+292,Sapnap (Video Blogging RPF)
+293,Alexis | Quackity
+294,Dan Howell
+295,Phil Lester
+296,Chris Kendall
+297,PJ Liguori
+298,Original Male Character(s)
+299,Mark Fischbach
+300,Sean McLoughlin
+301,Marzia Bisognin
+302,Felix Kjellberg
+303,Jensen Ackles
+304,Jared Padalecki
+305,Misha Collins
+306,Danneel Harris
+307,Jeffrey Dean Morgan
+308,Genevieve Cortese
+309,Vicki Vantoch
+310,Castiel
+311,Dean Winchester
+312,Sam Winchester
+313,Original Female Character
+314,Original Male Character
+315,Original Character(s)
+316,Derek Hale
+317,Stiles Stilinski
+318,Sans (Undertale)
+319,Jeon Jungkook
+320,Min Yoongi | Suga
+321,Park Jimin (BTS)
+322,Tom Hiddleston
+323,Chris Hemsworth
+324,Benedict Cumberbatch
+325,Wang Yi Bo
+326,Xiao Zhan | Sean
+327,Lán Zhàn | Lán Wàngjī
+328,Wèi Yīng | Wèi Wúxiàn
+329,Cho Seungyeon | Seungyoun
+330,Liu Haoran
+331,Everyone
+332,Liu Haikuan
+333,Zhu Zanjin
+334,Donald Trump
+335,Ayanga
+336,Zheng Yunlong
+337,Harry Styles
+338,Louis Tomlinson
+339,Chris Evans
+340,Sebastian Stan
+341,Chris Evans (Actor)
+342,Keith
+343,Lance (Voltron)
+344,Shiro (Voltron)
+345,Adam
+346,Allura
+347,Hunk
+348,Shay (Voltron)
+349,Lance
+350,Matt Holt
+351,Shiro
+352,Lotor (Voltron)
+353,Pidge | Katie Holt
+354,Kim Taehyung | V
+355,Park Jimin
+356,Kim Namjoon | RM
+357,Kim Seokjin | Jin
+358,Jung Hoseok | J-Hope
+359,Byun Baekhyun
+360,Park Chanyeol
+361,Do Kyungsoo | D.O
+362,Kim Jongin | Kai
+363,Kim Jongdae | Chen
+364,Kim Minseok | Xiumin
+365,Oh Sehun
+366,Zhang Yi Xing | Lay
+367,Lu Han
+368,Kim Junmyeon | Suho
+369,Lee Donghyuck | Haechan
+370,Mark Lee
+371,Lee Jeno
+372,Na Jaemin
+373,Huang Ren Jun
+374,Park Jisung
+375,Zhong Chen Le
+376,Chittaphon Leechaiyapornkul | Ten
+377,Suh Youngho | Johnny
+378,Frank Iero
+379,Gerard Way
+380,Mikey Way
+381,Pete Wentz
+382,Patrick Stump
+383,Ryan Ross
+384,Brendon Urie
+385,Ray Toro
+386,Josh Dun
+387,Tyler Joseph
+388,Lindsey Ballato
+389,Bert McCracken
+390,Jamia Nestor
+391,Andy Hurley
+392,Joe Trohman
+393,Dallon Weekes
+394,William Beckett
+395,Gabe Saporta
+396,Spencer Smith
+397,Sarah Orzechowski
+398,Jon Walker
+399,Brian May
+400,Roger Taylor
+401,John Deacon
+402,Freddie Mercury
+403,Jim Hutton
+404,Roger Taylor (Queen)
+405,Veronica Tetzlaff
+406,Zayn Malik
+407,Liam Payne
+408,Niall Horan
+409,Perrie Edwards
+410,Nick Grimshaw
+411,Sophia Smith
+412,Gemma Styles
+413,Eleanor Calder
+414,Danielle Peazer
+415,Jenna Black
+416,Debby Ryan
+417,Aziraphale
+418,Crowley (Good Omens)
+419,Other Relationship Tags to Be Added
+420,Katsuki Yuuri
+421,Victor Nikiforov
+422,Original Non-Binary Character(s)
+423,Original Female Human Character(s)
+424,Original Male Turian Character(s)
+425,Female Shepard
+426,Garrus Vakarian
+427,Bill Hader
+428,Jack Harkness
+429,Ianto Jones
+430,Tenth Doctor
+431,Rose Tyler
+432,Gwen Cooper
+433,Rhys Williams
+434,Ninth Doctor
+435,Owen Harper
+436,Toshiko Sato
+437,Lisa Hallett
+438,Amy Pond
+439,Rory Williams
+440,The Doctor (Doctor Who)
+441,Metacrisis Tenth Doctor
+442,Eleventh Doctor
+443,Thirteenth Doctor
+444,Twelfth Doctor
+445,Donna Noble
+446,The Master (Simm)
+447,The Doctor
+448,The Master (Doctor Who)
+449,John Hart
+450,River Song
+451,Clara Oswin Oswald
+452,Yasmin Khan
+453,Missy
+454,The Master (Dhawan)
+455,Danny Pink
+456,Enjolras
+457,Grantaire (Les Misérables)
+458,Cosette Fauchelevent
+459,Marius Pontmercy
+460,Combeferre
+461,Courfeyrac (Les Misérables)
+462,Joly
+463,Bossuet Laigle
+464,Musichetta
+465,Courfeyrac
+466,Jean Prouvaire
+467,Éponine Thénardier
+468,Enjolras (Les Misérables)
+469,Bahorel
+470,Feuilly (Les Misérables)
+471,Montparnasse
+472,Javert
+473,Jean Valjean
+474,Alexander Hamilton
+475,John Laurens
+476,"Elizabeth ""Eliza"" Schuyler"
+477,Thomas Jefferson
+478,Gilbert du Motier Marquis de Lafayette
+479,Hercules Mulligan
+480,Aaron Burr
+481,James Madison
+482,Maria Reynolds
+483,George Washington
+484,Theodosia Prevost Burr
+485,Martha Washington
+486,Angelica Schuyler
+487,David Jacobs
+488,Jack Kelly
+489,Spot Conlon
+490,Racetrack Higgins
+491,Katherine Plumber Pulitzer
+492,Sarah Jacobs
+493,Crutchie
+494,Jack Kelly (Newsies)
+495,Kid Blink
+496,Mush Meyers
+497,Albert DaSilva
+498,Romeo
+499,Specs (Newsies)
+500,Elmer (Newsies)
+501,Finch (Newsies)
+502,Jeremy Heere
+503,Michael Mell
+504,Jake Dillinger
+505,Rich Goranski
+506,Christine Canigula
+507,Brooke Lohst
+508,Chloe Valentine
+509,Jeremy Heere's Squip
+510,Evan Hansen
+511,Connor Murphy
+512,Jenna Rolan
+513,Chiba Mamoru
+514,Tsukino Usagi
+515,Kaiou Michiru
+516,Tenoh Haruka
+517,Aino Minako
+518,Kunzite
+519,Seiya Kou
+520,Hino Rei
+521,Jadeite
+522,Prince Endymion
+523,Princess Serenity
+524,Mizuno Ami
+525,Zoisite
+526,Kino Makoto
+527,Nephrite
+528,Senshi
+529,Shitennou
+530,King Endymion
+531,Neo-Queen Serenity
+532,Chibiusa
+533,Tomoe Hotaru
+534,Zoisite (Sailor Moon)
+535,Gabriel
+536,Jessica Moore
+537,Eileen Leahy
+538,Lucifer
+539,Castiel (Supernatural)
+540,Gabriel (Supernatural)
+541,John Winchester
+542,Mary Winchester
+543,Ellen Harvelle
+544,Bobby Singer
+545,Crowley
+546,Charlie Bradbury
+547,Jo Harvelle
+548,Dorothy Baum
+549,Lisa Braeden
+550,Michael (Supernatural)
+551,Michael
+552,Adam Milligan
+553,Prompto Argentum
+554,Noctis Lucis Caelum
+555,Ignis Scientia
+556,Gladiolus Amicitia
+557,Lunafreya Nox Fleuret
+558,G'raha Tia | Crystal Exarch
+559,Warrior of Light
+560,Emet-Selch
+561,Warrior of Light (Final Fantasy XIV)
+562,Haurchefant Greystone
+563,Aymeric de Borel
+564,Zenos yae Galvus
+565,Thancred Waters
+566,Estinien Wyrmblood
+567,Azem
+568,Emet-Selch (Final Fantasy XIV)
+569,Ardbert
+570,Sephiroth
+571,Cloud Strife
+572,Tifa Lockhart
+573,Zack Fair
+574,Aerith Gainsborough
+575,Cloud
+576,Leon (Kingdom Hearts)
+577,Squall Leonhart
+578,Genesis Rhapsodos
+579,Angeal Hewley
+580,Rude
+581,Reno
+582,Ardyn Izunia
+583,Cor Leonis
+584,Ravus Nox Fleuret
+585,Taylor Swift
+586,Karlie Kloss
+587,Ed Sheeran
+588,Adam Young
+589,Phineas Flynn
+590,Isabella Garcia-Shapiro
+591,Nya
+592,Jay Walker
+593,William Tucker Boner
+594,Sonja Reid
+595,Adam Dahlberg
+596,Alesa Dahlberg
+597,Queenie Goldstein
+598,Jacob Kowalski
+599,Tina Goldstein
+600,Newt Scamander
+601,Credence Barebone
+602,Original Percival Graves
+603,Betty
+604,James (folklore - Taylor Swift)
+605,August's Narrator
+606,Betty (folklore - Taylor Swift)
+607,Inez
+608,Original Male Character(s) (folklore - Taylor Swift)
+609,Joe Alwyn
+610,Inez (folklore - Taylor Swift)
+611,Dorothea (evermore - Taylor Swift)
+612,Este
+613,Este's Husband (evermore - Taylor Swift)
+614,Este's Husband
+615,Este's Husband's Mistress (evermore - Taylor Swift)
+616,Spike Spiegel
+617,Faye Valentine
+618,Jet Black
+619,Julia
+620,Vicious
+621,Vicious (Cowboy Bebop)
+622,Grencia Eckener
